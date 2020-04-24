@@ -22,11 +22,10 @@ plt.ylabel('y')
 # plt.title('After Fourier transform')
 
 # 进行快速傅里叶变换
-fs=2*np.pi
-freqs=np.fft.fftfreq(np.size(x),1/fs)
+freqs=np.fft.fftfreq(np.size(x),x[1]-x[0])
 idx=np.argsort(freqs)
-ps=np.abs(np.fft.fft(y)**2)
+ps=np.abs(np.fft.fft(y))**2
 plt.plot(freqs[idx],ps[idx])
-plt.xlim(-0.2,0.2)
+plt.xlim(-6,6)
 
 plt.show()
