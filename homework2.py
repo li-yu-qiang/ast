@@ -8,7 +8,9 @@ plt.rcParams['font.sans-serif']=['Heiti']
 
 # 生成100个随机整数
 n1=100
-norm=np.random.randint(0,10,size=n1)
+arr=np.random.normal(0,1,n1)
+norm=10*arr
+norm=norm.astype(int)
 am=np.mean(norm)
 ss=np.std(norm)
 cdf=spstat.cumfreq(norm,numbins=100)
