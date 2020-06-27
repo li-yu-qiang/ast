@@ -135,18 +135,7 @@ ax1.set_title('velocity dispersion')
 ax1.tick_params(labelsize=7)
 plt.colorbar(im1)
 
-fg2 = plt.figure(4, figsize=(18,2.8))
-ax2 = fg2.add_subplot(1,1,1, projection=wcs.WCS(hdu_in.header,naxis=2))
-scu2_mi = scu_in.moment(order=0)  # moment0: integrated intensity
-scu2_mi = scu2_mi.hdu.data
-min0,max0 = np.min(scu2_mi), np.max(scu2_mi)
-im2 = ax2.imshow(scu2_mi, cmap=plt.cm.nipy_spectral_r, vmin=min0, vmax=max0, origin='lower')
-ax2.axes.set_aspect('equal')
-ax2.contour(hdu_in.data, levels=lvs, linewidths=0.5, colors='white')
-ax2.set_title('Integral intensity')
-ax2.tick_params(labelsize=7)
-plt.colorbar(im2)
-
+fig = plt.figure(4,figsize=(6,4)) 
 dir(colors)
 plt.pcolor(Tb_chan)
 
